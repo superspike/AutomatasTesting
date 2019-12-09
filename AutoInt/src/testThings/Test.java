@@ -39,6 +39,22 @@ public class Test {
 		System.out.print('\n');
 	}
 	
+
+	public String toString(){
+		StringBuilder sb=new StringBuilder();
+		sb.append("input: ");
+		for(Integer i:inputs){
+			sb.append(i.toString());
+			sb.append(" ");
+		}
+		sb.append("\noutput: ");
+		for(Integer o:outputs){
+			sb.append(o.toString());
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+	
 	public void runTest(){
 		int st=0;
 		for(int i=0;i<inputs.size();i++){
@@ -48,5 +64,13 @@ public class Test {
 	}
 	public int size(){
 		return this.outputs.size();
+	}
+	public String getStringOutputs(){
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<outputs.size();i++){
+			sb.append(outputs.get(i).toString());
+			sb.append(" ");
+		}
+		return sb.toString();
 	}
 }

@@ -11,21 +11,14 @@ import testThings.TestTester;
 public class Main {
 	public static void main(String args[]){
 		Random r=new Random();
-		int numStates=3;
+		int numStates=6;
 		int alphSize=3;
 		int numTests=10;
 		int lonTest=12;
 		int mut=10;
-		MealyMachine m=new MealyMachine(numStates, alphSize);//3 estados, 1 2 3 como inputs
-		m.addTransition(new Transition(0,r.nextInt(numStates),0,r.nextInt(alphSize)));
-		m.addTransition(new Transition(0,r.nextInt(numStates),1,r.nextInt(alphSize)));
-		m.addTransition(new Transition(0,r.nextInt(numStates),2,r.nextInt(alphSize)));
-		m.addTransition(new Transition(1,r.nextInt(numStates),0,r.nextInt(alphSize)));
-		m.addTransition(new Transition(1,r.nextInt(numStates),2,r.nextInt(alphSize)));
-		m.addTransition(new Transition(1,r.nextInt(numStates),1,r.nextInt(alphSize)));
-		m.addTransition(new Transition(2,r.nextInt(numStates),0,r.nextInt(alphSize)));
-		m.addTransition(new Transition(2,r.nextInt(numStates),1,r.nextInt(alphSize)));
-		m.addTransition(new Transition(2,r.nextInt(numStates),2,r.nextInt(alphSize)));
+		MealyMachine m=new MealyMachine(numStates, alphSize, true);//3 estados, 1 2 3 como inputs
+
+		
 		ArrayList<Integer> inp=new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>> tests=new ArrayList<ArrayList<Integer>>();
 

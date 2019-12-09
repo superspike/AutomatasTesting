@@ -40,6 +40,15 @@ public class TestTester {
 		return 0;
 	}
 	
+	public String getRes(){
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<numMuts;i++){
+			sb.append(this.comp.get(i).toString());
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+	
 	public void showRes(){
 		this.test.show();
 		for(int i=0;i<numMuts;i++){
@@ -55,5 +64,18 @@ public class TestTester {
 		}
 	}
 	
-	
+	public String toString(){
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<numMuts;i++){
+			sb.append(this.comp.get(i));
+			sb.append(' ');
+		}
+		sb.append('\n');
+		return sb.toString();
+	}
+	public String getOutput(){
+		return this.test.getStringOutputs();
+	}
 }
+	
+

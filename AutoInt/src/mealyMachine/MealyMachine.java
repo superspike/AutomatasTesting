@@ -9,6 +9,26 @@ public class MealyMachine {
 	private ArrayList<State> stateList;
 	private int alphabetSize=3;
 	Scanner reader=new Scanner(System.in);
+	Random r=new Random();
+	
+	public MealyMachine(int ns, int tamAlph, boolean rand){
+		this.stateList=new ArrayList<State>();
+		this.alphabetSize=tamAlph;
+		if(rand){
+			for(int i=0;i<ns;i++){
+				this.stateList.add(new State(i));
+				for(int j=0; j<tamAlph; j++){
+					this.stateList.get(i).addTransition(new Transition(i,r.nextInt(ns),
+						j, r.nextInt(tamAlph)));
+				}
+			}
+		}
+		else{
+			for(int i=0;i<ns;i++){
+				this.stateList.add(new State(i));
+			}
+		}
+	}
 	
 	public MealyMachine(String s, int tamAlph) throws Exception{
 		this.stateList=new ArrayList<State>();
@@ -92,8 +112,6 @@ public class MealyMachine {
 		//System.out.println();
 	}
 	public void mutateDestiny(){
-		MealyMachine copia=this.clone();
-		Random r=new Random();
 		int randomInt1=r.nextInt(this.stateList.size());//Seleccionamos un estado aleatorio
 		int randomInt2=r.nextInt(this.stateList.get(randomInt1).getSize());//Seleccionamos una transicion aleatoria dentro de ese estado aleatorio
 		int randomInt3=r.nextInt(this.stateList.size());//Seleccionamos un estado aleatorio como destino de la transicion elegida
@@ -145,5 +163,14 @@ public class MealyMachine {
 		}
 		sb.append("}\n");
 		return sb.toString();
+	}
+	public String toString(){
+		return this.toDotString();
+	}
+	public Integer getNumStates(){
+		return this.stateList.size();
+	}
+	public Integer getAlphSize(){
+		return this.alphabetSize;
 	}
 }
