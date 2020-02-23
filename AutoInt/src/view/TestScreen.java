@@ -73,7 +73,7 @@ public class TestScreen extends Group {
 	                			}
 	                			te=new Test(caso,c.getMm());
 	                			te.runTest();
-	                			comp.addTestTester(te);
+	                			//comp.addTestTester(te);
 	                		}
 	                		c.setTc(comp);
 	                		c.getTc().runAll();

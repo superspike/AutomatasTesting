@@ -55,7 +55,9 @@ public class CreateManualAutomatonScreen extends MealyCreatorGroup {
 	            new EventHandler<ActionEvent>() {
 	                @Override
 	                public void handle(final ActionEvent e) {
-	                		MealyMachine mod=new MealyMachine(numStates,alphabetSize,false);
+	                	//MIRAR PORQUE TIENEN QUE SER DIFERENTES TAMAÑOS DE ALFABETOS
+	                	//TENGO PUESTO ESE DOS VECES PARA QUE NO DE ERROR Y COMPILE
+	                		MealyMachine mod=new MealyMachine(numStates,alphabetSize, alphabetSize, false);
 	                		for(int i=0;i<numStates;i++){
 	                			for(int j=0;j<alphabetSize;j++){
 	                				mod.addTransition(new Transition(

@@ -61,8 +61,8 @@ public class FirstScreen extends MealyCreatorGroup {
 	            new EventHandler<ActionEvent>() {
 	                @Override
 	                public void handle(final ActionEvent e) {
-	                		c.setMm(new MealyMachine(
-	                				s1.getValue(), s2.getValue(), true));
+	                		//c.setMm(new MealyMachine(
+	                			//	s1.getValue(), s2.getValue(), true));
 	                		autoDot.setText(c.getMm().toDotString());
 	                		created =true;
 	                    }
@@ -146,3 +146,21 @@ public class FirstScreen extends MealyCreatorGroup {
 	}
 	
 }
+/*
+ * TENGO QUE ARREGLAR LAS COSAS DE VIEW AHORA QUE HE CAMBIADO LA ESTRUCTURA DEL CÓGIDO CON LOS SETS Y DEMÁS
+ * L 64-65 FirstScreen
+ * L 101 FirstScreen
+ * L 58 CreateManualAutomatonScreen
+ * 
+ * TENGO QUE MIRAR LAS FUNCIONES QUE CREAN LAS STRINGS QUE DESCRIBEN LAS MÁQUINAS Y LAS QUE LAS PARSEAN
+ * PARA ADAPTARLAS A QUE USEN LOS SETS
+ * 
+ * La maquina no tiene porque ser completa
+ * Alfabeto de input y de output
+ * Testear con maquina y sin maquina(solo con test), generar tests(Tener formato interno input-ouput).,
+ * Problema del mutante quivalente 
+ * Conformance
+ * Generar test de longitud determinada
+ * Generar test de forma aleatoria con n inputs EN TOTAL, evitar test redundantes
+ * 
+*/
